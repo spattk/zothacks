@@ -1,7 +1,7 @@
 console.log("hey I am loaded");
 
 var btn2 = document.createElement("input");
-btn2.value = "Test Modal";
+btn2.value = "CLOSE";
 
 btn2.id = "close-modal";
 btn2.type = "submit";
@@ -99,7 +99,7 @@ $('.iknow').on('click', function (e) {
                 totalNP += info[i]["gradeNPCount"]
                 averageGPA += info[i]["averageGPA"]
             }
-            averageGPA = averageGPA/info.length;
+            averageGPA = averageGPA / info.length;
             averageGPA = averageGPA.toFixed(2)
             let totalStudents = totalA + totalB + totalC + totalD + totalF + totalP + totalNP
             console.log(totalA, totalB, totalC, totalD, totalF, totalNP, totalP, totalStudents, averageGPA);
@@ -108,9 +108,9 @@ $('.iknow').on('click', function (e) {
             document.body.appendChild(btn2)
             var myDialog = document.createElement("dialog");
 
-            
+
             document.body.appendChild(myDialog);
-            
+
             var text = document.createTextNode(`Total Students: ${totalStudents}, 
             A = ${totalA}, B =  ${totalB}, C = ${totalC}, D = ${totalD}, F = ${totalF}, Pass = ${totalP}, NotPass = ${totalNP}, averageGPA = ${averageGPA}`);
             myDialog.appendChild(text);
@@ -133,6 +133,16 @@ $('.iknow').on('click', function (e) {
     // document.querySelector("#test").value = 'changing the btn'
 
 });
+
+$('body').on('click', function (e) {
+    if (e.target.value == 'CLOSE') {
+        let dialogs = document.querySelectorAll('dialog');
+        for (let z = 0; z < dialogs.length; z++) {
+            dialogs[z].remove();
+        }
+    }
+});
+
 
 console.log("wohoooo")
 

@@ -13,9 +13,7 @@ document.querySelector('body').append(dialog);
 
 $('#close-modal').on('click', function(e) {
     console.log(e.target);
+    console.log("aslkdfjlsakdjf")
     // document.querySelectorAll('.team4-final')
     // console.log("19287983")
 });
-
-
-document.querySelector('#close-modal').addEventListener('click', function(e) { console.log(e.target)}, false);
