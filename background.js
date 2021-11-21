@@ -53,7 +53,7 @@ $('.iknow').on('click', function (e) {
     department = department.replace(" ", "%20")
     department = department.replace("/", "%2f")
 
-    
+
     // let number = "33"
     number = number.replace(" ", "%20")
     // let year = "2019-20;2020-21" //possibly none
@@ -95,11 +95,11 @@ $('.iknow').on('click', function (e) {
             let totalStudents = totalA + totalB + totalC + totalD + totalF + totalP + totalNP
             console.log(totalA, totalB, totalC, totalD, totalF, totalNP, totalP, totalStudents);
 
-            
+
             var myDialog = document.createElement("dialog");
             document.body.appendChild(myDialog)
             var text = document.createTextNode(`Total Students: ${totalStudents}, 
-            A = ${totalA}, B =  ${totalB}, C = ${totalC}, D = ${totalD}, F = ${totalF}, Pass = ${totalP}, NotPass = ${totalNP}`,);
+            A = ${totalA}, B =  ${totalB}, C = ${totalC}, D = ${totalD}, F = ${totalF}, Pass = ${totalP}, NotPass = ${totalNP}`);
             myDialog.appendChild(text);
             myDialog.showModal();
 
