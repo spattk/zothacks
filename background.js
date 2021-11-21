@@ -1,5 +1,10 @@
 console.log("hey I am loaded");
 
+var btn2 = document.createElement("input");
+btn2.value = "Test Modal";
+
+btn2.id = "close-modal";
+btn2.type = "submit";
 
 // lists = document.querySelectorAll('div')
 // for (let i = 0; i < lists.length; i++) {
@@ -16,12 +21,12 @@ function changeName() {
 let quarter = document.querySelector("h3[style='display: inline;']").textContent.split(" ")[0];
 
 for (let i = 0; i < lists.length; i++) {
-    console.log(lists[i]);
+    // console.log(lists[i]);
     var cols = lists[i].childNodes;
     for (let j = 0; j < cols.length; j++) {
         if (j == 0 && cols[j].className == 'CourseTitle') {
             innerLists = cols[j].textContent;
-            console.log("innerlists", innerLists)
+            // console.log("innerlists", innerLists)
             department = innerLists.split(" ")[1];
             courseNumber = innerLists.split(" ")[3]
             // console.log(department, courseNumber)
@@ -83,6 +88,7 @@ $('.iknow').on('click', function (e) {
             let totalF = 0
             let totalP = 0
             let totalNP = 0
+            let averageGPA = 0
             for (let i = 0; i < info.length; i++) {
                 totalA += info[i]["gradeACount"]
                 totalB += info[i]["gradeBCount"]
@@ -91,18 +97,25 @@ $('.iknow').on('click', function (e) {
                 totalF += info[i]["gradeFCount"]
                 totalP += info[i]["gradePCount"]
                 totalNP += info[i]["gradeNPCount"]
+                averageGPA += info[i]["averageGPA"]
             }
+            averageGPA = averageGPA/info.length;
+            averageGPA = averageGPA.toFixed(2)
             let totalStudents = totalA + totalB + totalC + totalD + totalF + totalP + totalNP
-            console.log(totalA, totalB, totalC, totalD, totalF, totalNP, totalP, totalStudents);
+            console.log(totalA, totalB, totalC, totalD, totalF, totalNP, totalP, totalStudents, averageGPA);
 
 
+            document.body.appendChild(btn2)
             var myDialog = document.createElement("dialog");
-            document.body.appendChild(myDialog)
-            var text = document.createTextNode(`Total Students: ${totalStudents}, 
-            A = ${totalA}, B =  ${totalB}, C = ${totalC}, D = ${totalD}, F = ${totalF}, Pass = ${totalP}, NotPass = ${totalNP}`);
-            myDialog.appendChild(text);
-            myDialog.showModal();
 
+            
+            document.body.appendChild(myDialog);
+            
+            var text = document.createTextNode(`Total Students: ${totalStudents}, 
+            A = ${totalA}, B =  ${totalB}, C = ${totalC}, D = ${totalD}, F = ${totalF}, Pass = ${totalP}, NotPass = ${totalNP}, averageGPA = ${averageGPA}`);
+            myDialog.appendChild(text);
+            myDialog.appendChild(btn2);
+            myDialog.showModal();
             // return {
             //     totalStudents,
             //     totalA,

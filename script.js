@@ -1,5 +1,5 @@
 
-var btn = document.createElement("button");
+var btn = document.createElement("input");
 btn.value = "Test Modal";
 btn.id = "test";
 btn.type = "submit";
@@ -11,9 +11,11 @@ var dialog = document.createElement("dialog");
 dialog.innerHTML='<p>Greetings, one and all!</p>';
 document.querySelector('body').append(dialog);
 
-$('#test').on('click', function(e) {
-    // console.log("askljdf;lkasjd;las;kdf");
-
-    
+$('#close-modal').on('click', function(e) {
+    console.log(e.target);
+    // document.querySelectorAll('.team4-final')
+    // console.log("19287983")
 });
 
+
+document.querySelector('#close-modal').addEventListener('click', function(e) { console.log(e.target)}, false);
