@@ -13,8 +13,7 @@ function changeName() {
     // document.querySelector('#test').val = "changed";
 }
 
-// let quarter = document.querySelector("h3[style='display: inline;']").textContent.split(" ")[0];
-quarter='winter'
+let quarter = document.querySelector("h3[style='display: inline;']").textContent.split(" ")[0];
 
 for (let i = 0; i < lists.length; i++) {
     console.log(lists[i]);
@@ -28,17 +27,21 @@ for (let i = 0; i < lists.length; i++) {
         }
             
         if(j == 4){
-            let prof = cols[j].innerHTML;
-            console.log(prof)
-            cols[j].innerHTML = `<a class="iknow" dept=${department} course_number=${courseNumber} quarter=${quarter} instructor=${prof}>${prof}</a>`;
+            let prof = cols[j].textContent;
+            cols[j].innerHTML = `<a class='iknow' dept='${department}' course_number='${courseNumber}' 
+            quarter='${quarter}' instructor='${prof}'>${prof}</a>`;
         }
     }
     // console.log(cols);
 }
 
 $('.iknow').on('click', function(e) {
-    // console.log(e.target.attributes);
+    console.log(e.target.getAttribute("dept"));
+    console.log(e.target.getAttribute("course_number"));
+    console.log(e.target.getAttribute("quarter"));
+    console.log(e.target.getAttribute("instructor"));
     // document.querySelector("#test").value = 'changing the btn'
+    
 });
 
 console.log("wohoooo")
