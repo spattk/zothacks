@@ -6,6 +6,13 @@ btn2.value = "CLOSE";
 btn2.id = "close-modal";
 btn2.type = "submit";
 
+
+// Creating canvas
+var canvas = document.createElement("canvas")
+canvas.id = "bar-chart"
+canvas.width = "800"
+canvas.height = "450"
+
 // lists = document.querySelectorAll('div')
 // for (let i = 0; i < lists.length; i++) {
 //     lists[i].innerHTML = '';
@@ -105,6 +112,7 @@ $('.iknow').on('click', function (e) {
             console.log(totalA, totalB, totalC, totalD, totalF, totalNP, totalP, totalStudents, averageGPA);
 
 
+            // document.body.appendChild(canvas);
             document.body.appendChild(btn2)
             var myDialog = document.createElement("dialog");
 
@@ -114,8 +122,47 @@ $('.iknow').on('click', function (e) {
             var text = document.createTextNode(`Total Students: ${totalStudents}, 
             A = ${totalA}, B =  ${totalB}, C = ${totalC}, D = ${totalD}, F = ${totalF}, Pass = ${totalP}, NotPass = ${totalNP}, averageGPA = ${averageGPA}`);
             myDialog.appendChild(text);
+            myDialog.appendChild(canvas);
             myDialog.appendChild(btn2);
             myDialog.showModal();
+
+            new Chart(document.getElementById("bar-chart"), {
+                type: 'bar',
+                data: {
+                    labels: ['A', 'B', 'C', 'D', 'F', 'P', 'NP', 'AvgGPA'],
+                    datasets: [{
+                        label: '# of Students',
+                        data: [totalA, totalB, totalC, totalD, totalF, totalP, totalNP, averageGPA],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
             // return {
             //     totalStudents,
             //     totalA,
