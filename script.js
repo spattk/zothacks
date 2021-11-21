@@ -1,10 +1,10 @@
 
-var btn = document.createElement("input");
+var btn = document.createElement("button");
 btn.value = "Test Modal";
 btn.id = "test";
 btn.type = "submit";
 
-// document.querySelector('body').append(btn);
+document.querySelector('body').append(btn);
 
 
 var dialog = document.createElement("dialog");
@@ -13,6 +13,7 @@ document.querySelector('body').append(dialog);
 
 $('#test').on('click', function(e) {
     // console.log("askljdf;lkasjd;las;kdf");
+
     
 });
 

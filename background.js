@@ -96,6 +96,12 @@ $('.iknow').on('click', function (e) {
             console.log(totalA, totalB, totalC, totalD, totalF, totalNP, totalP, totalStudents);
 
             
+            var myDialog = document.createElement("dialog");
+            document.body.appendChild(myDialog)
+            var text = document.createTextNode(`Total Students: ${totalStudents}, 
+            A = ${totalA}, B =  ${totalB}, C = ${totalC}, D=${totalD}, F=${totalF}, Pass=${totalP}, NotPass=${totalNP}`,);
+            myDialog.appendChild(text);
+            myDialog.showModal();
 
             // return {
             //     totalStudents,
