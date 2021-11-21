@@ -150,6 +150,8 @@ $('.iknow').on('click', function (e) {
                             'rgba(75, 192, 192, 1)',
                             'rgba(153, 102, 255, 1)',
                             'rgba(255, 159, 64, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(153, 102, 255, 1)',
 
                         ],
                         borderWidth: 1
@@ -163,16 +165,6 @@ $('.iknow').on('click', function (e) {
                     }
                 }
             });
-            // return {
-            //     totalStudents,
-            //     totalA,
-            //     totalB,
-            //     totalC,
-            //     totalD,
-            //     totalF,
-            //     totalP,
-            //     totalNP,
-            // }
         })
         .catch(error => {
             console.log("error", error)
@@ -186,6 +178,7 @@ $('body').on('click', function (e) {
         let dialogs = document.querySelectorAll('dialog');
         for (let z = 0; z < dialogs.length; z++) {
             dialogs[z].remove();
+            document.querySelector('canvas').remove();
         }
     }
 });
