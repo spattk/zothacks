@@ -9,7 +9,7 @@
       {
         "matches": ["<all_urls>"],
         "css": ["background.css"],
-        "js": ["jquery.min.js", "chart.js", "background.js", "script.js"]
+        "js": ["jquery.min.js", "chart.js", "background.js"]
       }
     ],
     "browser_action": {
