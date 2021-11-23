@@ -1,13 +1,13 @@
 {
     "manifest_version": 2,
-    "name": "Team4",
-    "version": "1.0.0",
-    "description": "This is a sample description",
+    "name": "Zot Point Average",
+    "version": "0.1",
+    "description": "Used to display the class statistics for the subject",
     "short_name": "Short Sample Name",
-    "permissions": ["activeTab", "declarativeContent", "storage", "<all_urls>"],
+    "permissions": ["activeTab", "declarativeContent", "storage", "https://www.reg.uci.edu/perl/WebSoc"],
     "content_scripts": [
       {
-        "matches": ["<all_urls>"],
+        "matches": ["https://www.reg.uci.edu/perl/WebSoc"],
         "css": ["background.css"],
         "js": ["jquery.min.js", "chart.js", "background.js"]
       }
@@ -16,8 +16,8 @@
       "default_title": "Does a thing when you do a thing",
       "default_popup": "popup.html",
       "default_icon": {
-        "16": "icons/icon_16.jpg",
-        "32": "icons/icon_16.jpg"
+        "16": "img/icons/icon_16.jpg",
+        "32": "img/icons/icon_16.jpg"
       }
     }
    }
