@@ -1,0 +1,9 @@
+img.icon{
+    position: relative;
+    top: 4px;
+}
+
+a.iknow {
+    color: blue;
+    font-weight: bold;
+}

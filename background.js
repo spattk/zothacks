@@ -1,4 +1,4 @@
-console.log("Point Average")
+console.log("Loaded Point Average")
 
 var modalCloseBtn = document.createElement("input");
 modalCloseBtn.value = "CLOSE";
@@ -26,9 +26,16 @@ for (let i = 0; i < lists.length; i++) {
         }
 
         if (j == 4) {
-            let prof = cols[j].textContent;
+            let profs = cols[j].textContent;
+            console.log(profs);
+            let profsInnerHtml = cols[j].innerHTML;
+            if(profsInnerHtml.includes('<br>')){
+                //TODO - fix multiline content
+                continue;
+            }
+
             cols[j].innerHTML = `<a class='iknow' dept='${department}' course_number='${courseNumber}' 
-            quarter='${quarter}' instructor='${prof}'>${prof}</a>`;
+            quarter='${quarter}' instructor='${profs}'>${profs}</a><img class ="icon" src="https://i.ibb.co/KVYXd9d/click.png" height="15px" width="15px"/>`;
         }
     }
 }
@@ -43,6 +50,7 @@ $('.iknow').on('click', function (e) {
     let instructor = e.target.getAttribute("instructor");
 
 
+    console.log("instructor", instructor)
     instructor = instructor.replace(" ", "%20")
 
     department = department.replace("&", "%26")
