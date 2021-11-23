@@ -27,7 +27,6 @@ for (let i = 0; i < lists.length; i++) {
 
         if (j == 4) {
             let profs = cols[j].textContent;
-            console.log(profs);
             let profsInnerHtml = cols[j].innerHTML;
             if(profsInnerHtml.includes('<br>')){
                 //TODO - fix multiline content
@@ -49,8 +48,6 @@ $('.iknow').on('click', function (e) {
     let quarter = e.target.getAttribute("quarter");
     let instructor = e.target.getAttribute("instructor");
 
-
-    console.log("instructor", instructor)
     instructor = instructor.replace(" ", "%20")
 
     department = department.replace("&", "%26")
