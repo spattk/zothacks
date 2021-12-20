@@ -12,12 +12,18 @@
         "js": ["jquery.min.js", "chart.js", "background.js"]
       }
     ],
+    "icons": {
+      "16": "img/zpa.png",
+      "32": "img/zpa.png",
+      "48": "img/zpa.png"
+    },
     "browser_action": {
       "default_title": "Does a thing when you do a thing",
       "default_popup": "popup.html",
       "default_icon": {
-        "16": "img/icons/icon_16.jpg",
-        "32": "img/icons/icon_16.jpg"
+        "16": "img/zpa.png",
+        "32": "img/zpa.png",
+        "48": "img/zpa.png"
       }
     }
    }
