@@ -4,7 +4,7 @@
     "version": "0.1",
     "description": "Used to display the class statistics for the subject",
     "short_name": "Short Sample Name",
-    "permissions": ["activeTab", "declarativeContent", "storage", "https://www.reg.uci.edu/perl/WebSoc"],
+    "permissions": ["https://www.reg.uci.edu/perl/WebSoc"],
     "content_scripts": [
       {
         "matches": ["https://www.reg.uci.edu/perl/WebSoc"],
