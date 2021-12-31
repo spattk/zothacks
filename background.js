@@ -1,5 +1,5 @@
 console.log("Loaded Point Average")
-
+    
 var modalCloseBtn = document.createElement("input");
 modalCloseBtn.value = "CLOSE";
 modalCloseBtn.id = "close-modal";
